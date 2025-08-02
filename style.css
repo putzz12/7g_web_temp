@@ -1,0 +1,598 @@
+/* General Styling */
+:root {
+    --primary-blue: #0A1128; /* Biru Gelap Serasi */
+    --secondary-blue: #001F54; /* Biru Sedang */
+    --light-blue: #034078; /* Biru Lebih Terang (Untuk menu tertentu) */
+    --accent-blue: #22577A; /* Biru Akses (Hover) */
+    --white: #F8F8F8; /* Hampir Putih */
+    --text-color: #333;
+    --light-bg: #EAEFF2; /* Background ringan */
+
+    /* Warna untuk Fitur Box */
+    --feature-primary-blue: #60A5FA; /* Biru Muda untuk Struktur Kelas */
+    --feature-red-light: #EF4444; /* Merah agak terang untuk Jadwal Online */
+    --feature-orange-light: #F97316; /* Orange muda untuk Berita/Info Sekolah */
+    --feature-dark-blue: #1E3A8A; /* Biru tua untuk Fasilitas Kelas */
+
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-blue);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-blue);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 8px; /* Slightly more rounded */
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+.btn:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 15px var(--shadow-medium);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logos */
+}
+
+.logo-item {
+    height: 50px; /* Adjust height as needed */
+    width: auto;
+    object-fit: contain;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    color: var(--primary-blue);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    font-size: 17px;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--light-blue);
+    left: 0;
+    bottom: -8px;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--primary-blue);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.main-nav.active {
+    display: flex; /* Show when active */
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    position: absolute;
+    top: 80px; /* Adjust based on header height */
+    left: 0;
+    box-shadow: 0 8px 16px var(--shadow-medium);
+    padding: 20px 0;
+    border-top: 1px solid var(--light-bg);
+}
+
+.main-nav.active ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-nav.active li {
+    margin: 10px 20px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--light-bg);
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: var(--primary-blue);
+    text-shadow: 2px 2px 5px var(--shadow-light);
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 450px; /* Fixed height for consistency */
+    position: relative; /* For text overlay if any */
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area */
+    border-radius: 15px;
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--white);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light-bg);
+}
+
+section h2 {
+    font-size: 38px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: var(--light-blue);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
+
+/* Features Section (Box Melengkung) */
+.features-carousel {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Snap to items */
+    gap: 20px;
+    padding: 20px;
+    padding-bottom: 30px; /* Space for scrollbar */
+    margin-top: 30px;
+    justify-content: flex-start; /* Align items to start */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.features-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.features-carousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.feature-box {
+    flex: 0 0 300px; /* Fixed width, no shrinking/growing */
+    background-color: var(--white);
+    border-radius: 20px; /* Melengkung */
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 8px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start; /* Snap point */
+    min-height: 180px; /* Consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px var(--shadow-medium);
+}
+
+.feature-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--white); /* Text color inside colored boxes */
+}
+
+.feature-box p {
+    color: var(--white); /* Text color inside colored boxes */
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Specific Feature Box Colors */
+.feature-box.primary-blue { background-color: var(--feature-primary-blue); }
+.feature-box.red-light { background-color: var(--feature-red-light); }
+.feature-box.orange-light { background-color: var(--feature-orange-light); }
+.feature-box.dark-blue { background-color: var(--feature-dark-blue); }
+
+
+/* About Section */
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Location Section */
+.location-section {
+    background-color: var(--white);
+}
+
+.google-map-embed {
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow-light);
+}
+
+.google-map-embed iframe {
+    border-radius: 15px;
+}
+
+.map-btn {
+    margin-top: 20px;
+    display: block; /* Make it take full width on mobile */
+    max-width: 300px; /* Limit width on desktop */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-btn i {
+    margin-right: 8px;
+}
+
+/* Additional Menus Section */
+.additional-menus-section {
+    background-color: var(--light-bg);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-item {
+    background-color: var(--white);
+    border-radius: 15px; /* Box melengkung sedikit */
+    padding: 30px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px; /* Ensure consistent height */
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px var(--shadow-medium);
+    cursor: pointer;
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.menu-item h3 {
+    font-size: 22px;
+    margin: 0;
+    color: var(--secondary-blue);
+}
+
+/* Contact Section */
+.contact-section {
+    position: relative;
+    color: var(--white); /* Text color over background image */
+    padding: 100px 0; /* More padding for background effect */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 26, 51, 0.85), rgba(0, 26, 51, 0.85)), url('images/bg_school.jpg') no-repeat center center/cover;
+    z-index: 1;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight overlay for readability */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-content h2, .contact-content h3 {
+    color: var(--white);
+}
+
+.contact-content p {
+    font-size: 17px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer .research-source {
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to start for better layout */
+    }
+
+    .logo-group {
+        margin-bottom: 15px;
+    }
+
+    .main-nav {
+        display: none; /* Hide by default on mobile */
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute; /* Position toggle button */
+        top: 25px;
+        right: 20px;
+    }
+
+    .main-nav.active {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: static; /* Remove absolute positioning */
+        box-shadow: none; /* Remove shadow when expanded */
+        padding: 0;
+        border-top: none;
+    }
+
+    .main-nav.active li {
+        margin: 10px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .mySlides {
+        height: 300px; /* Smaller height for mobile */
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    .features-carousel {
+        padding: 15px;
+        flex-wrap: nowrap; /* Ensure it stays scrollable */
+    }
+
+    .feature-box {
+        flex: 0 0 85%; /* Make boxes wider for easier scrolling */
+        max-width: 350px;
+        margin: 0 auto; /* Center boxes if fewer than 2 */
+        scroll-snap-align: center;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-content {
+        padding: 30px;
+    }
+
+/* Dalam style.css Anda, tambahkan ini */
+.feature-link {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Make the entire box clickable */
+}
+
+/* Optional: Add hover effect specific to feature-link if needed, but the .feature-box:hover already handles it */
+.feature-link:hover {
+    color: inherit; /* Ensure text color doesn't change on hover if you want it to stay white */
+}
+
+
+

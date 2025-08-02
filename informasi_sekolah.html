@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Sekolah - SMPN 1 Mejayan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya khusus untuk halaman informasi sekolah */
+        .page-header {
+            background-color: var(--primary-blue);
+            color: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-header h1 {
+            color: var(--black);
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button:hover {
+            background-color: var(--accent-blue);
+        }
+
+        .info-section {
+            padding: 80px 20px;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .info-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-light);
+        }
+
+        .info-card h2 {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-card p {
+            font-size: 18px;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .school-link-button {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .school-link-button:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .page-header p {
+                font-size: 16px;
+            }
+
+            .back-button {
+                position: static;
+                margin-bottom: 20px;
+                width: fit-content;
+            }
+
+            .info-section {
+                padding: 40px 15px;
+            }
+
+            .info-card {
+                padding: 30px 20px;
+            }
+
+            .info-card h2 {
+                font-size: 24px;
+            }
+
+            .info-card p {
+                font-size: 16px;
+            }
+
+            .school-link-button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-left">
+                <div class="logo-group">
+                    <img src="images/logo_sekolah.png" alt="Logo Sekolah" class="logo-item">
+                    <img src="images/logo_osis.png" alt="Logo OSIS" class="logo-item">
+                    <img src="images/logo_kelas.png" alt="Logo Kelas 7G" class="logo-item">
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#beranda">Beranda</a></li>
+                    <li><a href="index.html#tentang">Tentang</a></li>
+                    <li><a href="index.html#fitur">Fitur</a></li>
+                    <li><a href="index.html#galeri">Galeri</a></li>
+                    <li><a href="index.html#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <a href="index.html#fitur" class="back-button"><i class="fas fa-arrow-left"></i> Kembali Ke Menu Awal</a>
+            <div class="container">
+                <h1>INFORMASI SEKOLAH</h1>
+                <p>Temukan informasi lengkap dan terhubung langsung ke website resmi sekolah.</p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-card">
+                <h2>SMP NEGERI 1 MEJAYAN</h2>
+                <p>SMPN 1 Mejayan merupakan salah satu institusi pendidikan terbaik yang berlokasi di Mejayan, Madiun, Jawa Timur. Sekolah ini berkomitmen untuk memberikan pendidikan berkualitas tinggi dan mengembangkan potensi siswa secara holistik, baik dari segi akademis maupun non-akademis.</p>
+                <a href="https://smpn1mejayan.sch.id" target="_blank" class="school-link-button">
+                    Kunjungi Website Resmi <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="currentYear"></span> | PTEK Technology | ITS Server | Google | Hak Cipta Kelas 7G</p>
+            <p class="research-source">Sumber Riset: 404 Not Found</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
