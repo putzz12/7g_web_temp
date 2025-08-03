@@ -3,10 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Resmi Kelas 7G - SMPN 1 Mejayan</title>
+    <title>Web Sedang Diperbarui - Kelas 7G</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: center; /* Pusat logo */
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .logo-item {
+            height: 40px;
+            width: auto;
+        }
+        
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .maintenance-container {
+            max-width: 800px;
+            padding: 40px;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .maintenance-container h1 {
+            color: var(--primary-blue);
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .maintenance-container h2 {
+            color: var(--secondary-blue);
+            font-size: 28px;
+            margin-top: 30px;
+        }
+        
+        .maintenance-container p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #countdown {
+            margin-top: 30px;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        #countdown span {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-container h1 {
+                font-size: 32px;
+            }
+            .maintenance-container h2 {
+                font-size: 24px;
+            }
+            .maintenance-container p {
+                font-size: 16px;
+            }
+            #countdown {
+                font-size: 28px;
+            }
+            .logo-item {
+                height: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -18,156 +131,51 @@
                     <img src="images/logo_kelas.png" alt="Logo Kelas 7G" class="logo-item">
                 </div>
             </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
-                    <li><a href="#fitur">Fitur</a></li>
-                    <li><a href="#galeri">Galeri</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </div>
     </header>
 
     <main>
-        <section id="beranda" class="hero-section">
-            <div class="container hero-content">
-                <h2>Selamat Datang di Class 7G</h2>
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                        <img src="images/hero_slide1.jpg" alt="Foto Kelas 7G 1">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/hero_slide2.jpg" alt="Foto Kelas 7G 2">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/hero_slide3.jpg" alt="Foto Kelas 7G 3">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="images/hero_slide4.jpg" alt="Foto Kelas 7G 4">
-                    </div>
-                    <div class="mySlides fade">
-                       <img src="images/hero_slide5.jpg" alt="Foto Kelas 7G 5">
-                    </div>
-                    <div class="mySlides fade">                  
-                        
-                        
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-
-                     <section id="fitur" class="features-section">
-    <div class="container">
-        <h2>Layanan Kami</h2>
-        <div class="features-carousel">
-            <a href="struktur_kelas.html" class="feature-box primary-blue feature-link">
-                <h3>Struktur Kelas</h3>
-                <p>Lihat bagan kepengurusan dan anggota kelas 7G.</p>
-            </a>
-            <a href="jadwal_online.html" class="feature-box red-light feature-link">
-                <h3>Jadwal Online</h3>
-                <p>Akses jadwal pelajaran dan kegiatan online terbaru.</p>
-            </a>
-            <div class="feature-box orange-light">
-                <h3>Berita & Informasi Sekolah</h3>
-                <p>Dapatkan update berita dan pengumuman penting dari sekolah.</p>
-            </div>
-            
-            <a href="informasi_sekolah.html" class="feature-box orange-light feature-link">
-                <h3>Informasi Sekolah</h3>
-                <p>Informasi umum mengenai SMPN 1 Mejayan.</p>
-            </a>
-            
-            <div class="feature-box dark-blue">
-                <h3>Fasilitas Kelas</h3>
-                <p>Cari tahu fasilitas yang tersedia di kelas 7G.</p>
-            </div>
+        <div class="maintenance-container">
+            <h1>WEB SEDANG DIPERBARUI</h1>
+            <p>Maaf atas ketidaknyamanan Anda.</p>
+            <p>Situs web ini sedang dalam mode perbaikan dan perawatan. Kami sedang berupaya keras untuk memberikan pengalaman terbaik untuk Anda.</p>
+            <h2>Nantikan web resmi kelas 7G Pada</h2>
+            <p style="font-weight: 600;">10 Agustus 2025 Pukul 00:00</p>
+            <div id="countdown"></div>
         </div>
-    </div>
-</section>
-
-
-
-        <section id="tentang" class="about-section">
-            <div class="container">
-                <h2>Tentang Kelas Kami</h2>
-                <p>Kami adalah komunitas belajar yang dinamis dan bersemangat, Kelas 7G SMPN 1 Mejayan. Di sini, kami tidak hanya fokus pada pencapaian akademik, tetapi juga pada pengembangan karakter, kreativitas, dan kolaborasi. Setiap hari adalah kesempatan baru untuk mengeksplorasi ide, memecahkan masalah, dan tumbuh bersama. Dengan dukungan penuh dari guru dan wali kelas, kami bertekad untuk menjadi pribadi yang berintegritas, inovatif, dan siap menghadapi tantangan masa depan. Selamat bergabung dalam perjalanan belajar kami yang penuh inspirasi!</p>
-            </div>
-        </section>
-
-        <section id="location" class="location-section">
-            <div class="container">
-                <h2>Alamat Sekolah</h2>
-                <p>SMPN 1 Mejayan, Jl. Panglima Sudirman No. 71, Mejayan, Kec. Mejayan, Kab. Madiun, Jawa Timur.</p>
-                <div class="google-map-embed">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.578641121516!2d111.5367332742915!3d-7.52125219248749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79e6027a4d4679%3A0x7d01a48c6a0c5c3!2sSMPN%201%20MEJAYAN!5e0!3m2!1sid!2sid!4v1701382410312!5m2!1sid!2sid" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <a href="https://www.google.com/maps/place/SMPN+1+Mejayan,+Jl.+Panglima+Sudirman+No.71,+Sanggrahan,+Mejayan,+Kec.+Mejayan,+Kabupaten+Madiun,+Jawa+Timur+63153/@-7.549355,111.6678237,17z/data=!4m6!3m5!1s0x2e79c80a4e819dd3:0xd9783f10ee7df1d7!8m2!3d-7.549355!4d111.6678237!16s%2Fg%2F1hm1sb201?source=lnms&utm_campaign=ml-ardl&g_ep=Eg1tbF8yMDI1MDcyN18wIJvbDyoASAJQAQ%3D%3D" target="_blank" class="btn map-btn">
-                    <i class="fas fa-map-marker-alt"></i> Bawa Aku Kesana
-                </a>
-            </div>
-        </section>
-
-        <section id="additional-menus" class="additional-menus-section">
-            <div class="container">
-                <h2>Eksplorasi Lebih Lanjut</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <img src="images/galeri_icon.png" alt="Galeri Kelas">
-                        <h3>Galeri Kelas</h3>
-                    </div>
-                    <div class="menu-item">
-                        <img src="images/belajar_online_icon.png" alt="Belajar Online">
-                        <h3>Belajar Online</h3>
-                    </div>
-                    <div class="menu-item">
-                        <img src="images/mpu_icon.png" alt="Materi Persiapan Ujian">
-                        <h3>MPU (Materi Persiapan Ujian)</h3>
-                    </div>
-                    <div class="menu-item">
-                        <img src="images/siswa_berlian_icon.png" alt="Siswa Berlian">
-                        <h3>Siswa Berlian</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="kontak" class="contact-section">
-            <div class="school-bg"></div>
-            <div class="container contact-content">
-                <h2>Kontak Kami</h2>
-                <div class="contact-info">
-                    <p><strong>SMPN 1 Mejayan:</strong> (0351) 383092</p>
-                    <p><strong>Wali Kelas 7G:</strong> Ibu Herlina Susanti S.Pd - +62 812-1733-094</p>
-                </div>
-                <h3>Hubungi Kami Langsung</h3>
-                <form class="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
-                    <input type="hidden" name="_subject" value="Pesan dari Situs Kelas 7G">
-                    <input type="hidden" name="_cc" value="patrubambong@gmail.com">
-                    <input type="text" name="Nama" placeholder="Nama Anda" required>
-                    <input type="email" name="Email" placeholder="Alamat Email Anda" required>
-                    <textarea name="Pesan" placeholder="Pesan Anda" rows="6" required></textarea>
-                    <button type="submit" class="btn">Kirim Pesan</button>
-                </form>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; <span id="currentYear"></span> |PZI Technology |Powered by Gemini Ai & PZI Tech | Github |Hak Cipta Kelas 7G</p>
+            <p>© <span id="currentYear"></span> | PTEK Technology | ITS Server | Google | Hak Cipta Kelas 7G</p>
             <p class="research-source">Sumber Riset: 404 Not Found</p>
         </div>
     </footer>
+    
+    <script>
+        const releaseDate = new Date("August 10, 2025 00:00:00").getTime();
+        
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = releaseDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown").innerHTML = 
+                `<span>${days} Hari</span> <span>${hours} Jam</span> <span>${minutes} Menit</span> <span>${seconds} Detik</span>`;
+            
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Web sudah rilis!";
+                window.location.reload(); // Memuat ulang halaman untuk melihat web yang baru
+            }
+        }, 1000);
 
-    <script src="script.js"></script>
+        // Update year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
